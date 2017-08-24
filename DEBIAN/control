@@ -1,0 +1,10 @@
+Package: emmipackdev
+Version: 1.0
+Section: 
+Priority: optional
+Maintainer: Jefferson rocha <lrcjefferson@gmail.com>
+Architecture: amd64
+Depends: xterm
+Installed-Size: 1 
+Homepage: http://www.emmilinux.com.br
+Description: Criação automatica control,copyright, preinst,postinst,.desktop

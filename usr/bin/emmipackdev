@@ -1,0 +1,63 @@
+#!/bin/bash
+
+
+#================|
+mkdir -v DEBIAN
+#================|
+
+# Control
+echo "Construindo Control"
+echo
+echo "Package: nome-pacote" >> DEBIAN/control
+echo "Version: versão" >> DEBIAN/control
+echo "Section: " >> DEBIAN/control
+echo "Priority: optional" >> DEBIAN/control
+echo "Maintainer: nome sobrenome <teste@teste.com>" >> DEBIAN/control
+echo "Architecture: amd64" >> DEBIAN/control
+echo "Depends: " >> DEBIAN/control
+echo "Installed-Size: " >> DEBIAN/control
+echo "Homepage:" >> DEBIAN/control
+echo "Description:" >> DEBIAN/control
+echo "Concluido" ;sleep 1
+echo
+
+# Copyright
+echo "Upstream-Name: Nome do app" >> DEBIAN/copyright
+echo "Upstream-Contact: Nome sobrenome <email@email.com>" >> DEBIAN/copyright
+echo "Copyright: 2017 app" >> DEBIAN/copyright
+echo "" >> DEBIAN/copyright
+echo "License: GPL" >> DEBIAN/copyright
+ echo "This program is free software; you can redistribute it" >> DEBIAN/copyright
+ echo "and/or modify it under the terms of the GNU General Public" >> DEBIAN/copyright
+ echo "License as published by the Free Software Foundation; either" >> DEBIAN/copyright
+ echo "version 2 of the License, or (at your option) any later version." >> DEBIAN/copyright
+
+
+
+#=================================|
+mkdir -v usr
+mkdir -v usr/share
+mkdir -v usr/share/applications
+#=================================|
+
+# .desktop
+echo "Construindo .desktop" ;sleep 1
+echo
+echo "[Desktop Entry]" >> usr/share/applications/teste.desktop
+echo "Name=Nome do Aplicativo" >> usr/share/applications/teste.desktop
+echo "Version=" >> usr/share/applications/teste.desktop
+echo "Comment=" >> usr/share/applications/teste.desktop
+echo "Exec=" >> usr/share/applications/teste.desktop
+echo "Terminal=false" >> usr/share/applications/teste.desktop
+echo "Icon=" >> usr/share/applications/teste.desktop
+echo "Type=Application" >> usr/share/applications/teste.desktop
+echo "Categories=Documentation;" >> usr/share/applications/teste.desktop
+
+
+# Preinst e Postinst
+echo "#!/bin/bash" >> DEBIAN/preinst
+echo "#!/bin/bash" >> DEBIAN/postinst
+
+# Permissão
+chmod 775 DEBIAN/preinst
+chmod 775 DEBIAN/postinst
