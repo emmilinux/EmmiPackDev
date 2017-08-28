@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#echo "Digite o nome do programa: "
+#read -n nomeprograma
+#pacote=`echo $nomeprograma | tr [:blank:] "-" | tr [:upper:] [:lower:]`
 
 #================|
 mkdir -v DEBIAN
@@ -9,6 +12,7 @@ mkdir -v DEBIAN
 echo "Construindo Control"
 echo
 echo "Package: nome-pacote" >> DEBIAN/control
+#echo "Package: $pacote" >> DEBIAN/control
 echo "Version: versão" >> DEBIAN/control
 echo "Section: " >> DEBIAN/control
 echo "Priority: optional" >> DEBIAN/control
